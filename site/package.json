@@ -1,0 +1,22 @@
+{
+  "name": "site",
+  "version": "0.0.1",
+  "description": "Gatsby Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby clean && gatsby build && gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "author": "Rocky  Liwanag",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.24.35",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "gatsby-wordpress-theme-babykeks": "*"
+  }
+}

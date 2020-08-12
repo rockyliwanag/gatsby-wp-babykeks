@@ -1,0 +1,19 @@
+{
+  "name": "babykeks",
+  "version": "0.0.1",
+  "description": "Gatsby Wordpress Theme",
+  "main": "index.js",
+  "author": "Rocky Liwanag",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "site",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace site dev",
+    "build": "yarn workspace site build",
+    "serve": "yarn workspace site start",
+    "clean": "yarn workspace site clean"
+  }
+}

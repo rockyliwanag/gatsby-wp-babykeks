@@ -1,0 +1,50 @@
+{
+  "name": "gatsby-wordpress-theme-babykeks",
+  "version": "0.0.1",
+  "description": "Gatsby Wordpress Theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9000",
+    "build-storybook": "build-storybook"
+  },
+  "author": "Rocky Liwanag",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-storysource": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "gatsby": "^2.24.35",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "dependencies": {
+    "@wordpress/base-styles": "^2.0.1",
+    "@wordpress/block-library": "^2.22.6",
+    "gatsby-image": "^2.4.16",
+    "gatsby-link": "^2.4.13",
+    "gatsby-plugin-graphql-image": "^1.0.1",
+    "gatsby-plugin-manifest": "^2.4.22",
+    "gatsby-plugin-react-helmet": "^3.3.10",
+    "gatsby-plugin-sass": "^2.3.12",
+    "gatsby-plugin-sharp": "^2.6.25",
+    "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-source-graphql": "^2.7.0",
+    "gatsby-transformer-sharp": "^2.5.12",
+    "lodash": "^4.17.19",
+    "node-sass": "^4.14.1",
+    "react-helmet": "^6.1.0",
+    "sass-mq": "^5.0.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.24.35",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
