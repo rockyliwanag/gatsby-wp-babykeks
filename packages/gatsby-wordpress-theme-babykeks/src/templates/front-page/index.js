@@ -19,6 +19,7 @@ const FrontPageTemplate = (props) => {
             {!isEmpty(props.pageContext) ? (
                 <>
                     <Hero data={banner} />
+
                 </>
             ) : <Error message="Something went wrong!" />}
         </Layout>

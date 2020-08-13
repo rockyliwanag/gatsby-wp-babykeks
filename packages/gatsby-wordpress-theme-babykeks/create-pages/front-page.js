@@ -19,7 +19,7 @@ query GET_FRONT_PAGE {
             sourceUrl
             sourceUrlSharp {
               childImageSharp {
-                fluid {
+                fluid (maxWidth: 100%) {
                   base64
                   aspectRatio
                   src
@@ -172,23 +172,23 @@ query GET_FRONT_PAGE {
 `;
 
 module.exports = async ({ actions, graphql }) => {
-    const { createPage } = actions;
+  const { createPage } = actions;
 
-    const fetchPosts = async () => {
-        return await graphql(GET_FRONT_PAGE)
-            .then(({ data }) => {
-                const { HWGraphQL: { pageBy, posts } } = data;
-                return { page: pageBy, posts: posts.nodes };
-            });
-    };
-    await fetchPosts().then(({ page, posts }) => {
-        createPage({
-            path: '/',
-            component: slash(frontPageTemplate),
-            context: {
-                page,
-                posts
-            }
-        });
+  const fetchPosts = async () => {
+    return await graphql(GET_FRONT_PAGE)
+      .then(({ data }) => {
+        const { HWGraphQL: { pageBy, posts } } = data;
+        return { page: pageBy, posts: posts.nodes };
+      });
+  };
+  await fetchPosts().then(({ page, posts }) => {
+    createPage({
+      path: '/',
+      component: slash(frontPageTemplate),
+      context: {
+        page,
+        posts
+      }
     });
+  });
 };

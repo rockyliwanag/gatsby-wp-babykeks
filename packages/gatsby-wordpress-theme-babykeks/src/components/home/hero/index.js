@@ -9,29 +9,30 @@ const Hero = (props) => {
     return !isEmpty(props.data) ? (
         <div className="hero-section">
             {/* <div className="hero-image"> */}
-            <BackgroundImage style={{ position: '"static"', height: '100vh' }}
+            <BackgroundImage
+                className="background-image"
                 fluid={image.sourceUrlSharp.childImageSharp.fluid}
                 alt={image.altText ? image.altText : 'Banner'}
             >
                 <div className="dark-BG">
 
-                </div>
-                <div className="hero">
-                    {title ? (<h2>{title}</h2>) : null}
-                    {description ? (
-                        <p className="hero-section__description">
-                            {description}
-                        </p>
-                    ) : null}
-                    {isEmpty(pageLink) ? (
-                        <Link to="/blog/">
-                            <button className="button-secondary">{pageLinkText}</button>
-                        </Link>
-                    ) : (
-                            <Link to={!isEmpty(pageLink.uri) ? pageLink.uri : '/blog/'}>
+                    <div className="hero">
+                        {title ? (<h2>{title}</h2>) : null}
+                        {description ? (
+                            <p className="hero-section__description">
+                                {description}
+                            </p>
+                        ) : null}
+                        {isEmpty(pageLink) ? (
+                            <Link to="/blog/">
                                 <button className="button-secondary">{pageLinkText}</button>
                             </Link>
-                        )}
+                        ) : (
+                                <Link to={!isEmpty(pageLink.uri) ? pageLink.uri : '/blog/'}>
+                                    <button className="button-secondary">{pageLinkText}</button>
+                                </Link>
+                            )}
+                    </div>
                 </div>
             </BackgroundImage>
             {console.log("BG Image, ", image)}
