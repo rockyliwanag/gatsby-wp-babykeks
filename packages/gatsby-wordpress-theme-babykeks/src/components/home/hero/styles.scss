@@ -1,0 +1,47 @@
+@import "../../../sass/essentials";
+
+.hero-section {
+	// margin-top: 70px;
+    align-items: center;
+    height: auto;
+    display: block;
+    background-size: auto;
+
+	@media only screen and ( min-width: $tablet ) {
+		display: block;
+		margin-top: 0;
+	}
+	&__description {
+		font-size: 18px;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+
+		@media only screen and ( min-width: $tablet ) {
+			font-size: 24px;
+		}
+	}
+
+}
+
+.dark-BG {
+	background-color: black;
+	background-size: cover;
+	opacity: 50%;
+	z-index: 10;
+}
+
+.hero {
+	margin-bottom: 50px;
+	margin-right: 50px;
+	z-index: 20;
+	color: whitesmoke;
+	@media only screen and ( min-width: $tablet ) {
+		margin-left: auto;
+		margin-right: auto;
+		margin-right: 100px;
+		width: 392px;
+		margin-bottom: 24px;
+	}
+}

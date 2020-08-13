@@ -1,9 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './../../sass/common.scss';
 
-const Layout = (props) => {
+const Layout = ({ children, data }) => {
     return (
-        <div> {props.children} </div>
+        <>
+            {/* <Header data={data} /> */}
+            <main className="main-container">{children}</main>
+            {/* <Footer data={data} /> */}
+        </>
     )
 }
+
+Layout.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default Layout;
