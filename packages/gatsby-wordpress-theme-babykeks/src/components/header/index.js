@@ -15,9 +15,9 @@ import { Header } from "./header-static";
  */
 export default (props) => {
 
-    return (
-        <StaticQuery
-            query={graphql`
+	return (
+		<StaticQuery
+			query={graphql`
 				    query HeaderQuery {
 				        HWGraphQL {
 						    header: getHeader {
@@ -48,23 +48,23 @@ export default (props) => {
 				        }
 				    }
 				` }
-            render={data => (
-                <>
-                    <SEO title="Babykeks" header={data.HWGraphQL.header} />
-                    <Header data={data} />
-                </>
-            )}
-        />
-    )
+			render={data => (
+				<>
+					<SEO title="Babykeks" header={data.HWGraphQL.header} />
+					<Header data={data} />
+				</>
+			)}
+		/>
+	)
 }
 
 Header.propTypes = {
-    siteTitle: PropTypes.string,
+	siteTitle: PropTypes.string,
 };
 
 Header.defaultProps = {
-    siteTitle: 'Babykeks',
-    data: {
-        HWGraphQL: {}
-    },
+	siteTitle: 'Babykeks',
+	data: {
+		HWGraphQL: {}
+	},
 };

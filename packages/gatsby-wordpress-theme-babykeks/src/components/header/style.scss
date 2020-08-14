@@ -3,7 +3,9 @@
 @import './../../sass/vendor/hamburger/hamburgers.scss';
 
 .site-header-container {
+
 	padding-right: 5px;
+	border: 2px salmon solid;
 
 	@include mq( medium ) {
 		padding-right: $container-padding;
@@ -17,6 +19,7 @@
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
+	border: 2px purple solid;
 
 	@include mq( medium ) {
 		align-items: center;
@@ -26,7 +29,17 @@
 .site-brand {
 	display: flex;
 	align-items: center;
+	border: 2px red solid;
+	
+	.site-brand__logo {
+			margin-right: 10px;
+			border: 2px lightskyblue solid;
+			@include mq( large ) {
+				width: 200px;
+			}
+		}
 }
+
 
 // Menu
 .header-nav {

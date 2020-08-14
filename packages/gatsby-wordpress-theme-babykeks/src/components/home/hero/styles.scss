@@ -29,29 +29,35 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-.dark-BG {
-	background-color: rgba(168, 125, 69, 0.582);
-	display: flex;
-	height: 100%;
-	align-items: center;
-	text-align: center;
-	
-}
-.hero {
-	margin: 0 auto;
-	margin-bottom: 6rem;
-	border: 2px black solid;
-	border-radius: 2rem;
-	background-color: rgba(172, 51, 4, 0.582);
-	justify-content: center;
-	color: whitesmoke;
-	padding: 2rem;
-	@media only screen and ( min-width: $tablet ) {
-		margin-left: auto;
-		margin-right: auto;
-		width: 500px;
-		margin-bottom: 24px;
+	@media only screen and (min-width: $tablet) {
+		
+		
 	}
+	
+	.dark-BG {
+		background-color: rgba(168, 125, 69, 0.582);
+		display: flex;
+		height: 100%;
+		align-items: center;
+		text-align: center;
+		
+	}
+	
+	.hero {
+		margin: 0 auto;
+		margin-bottom: 6rem;
+		border: 2px black solid;
+		border-radius: 2rem;
+		background-color: rgba(172, 51, 4, 0.582);
+		justify-content: center;
+		color: whitesmoke;
+		padding: 2rem;
+		@media only screen and ( min-width: $tablet ) {
+			margin-left: auto;
+			margin-right: auto;
+			width: 500px;
+			margin-bottom: 24px;
+		}
+	}
+
 }

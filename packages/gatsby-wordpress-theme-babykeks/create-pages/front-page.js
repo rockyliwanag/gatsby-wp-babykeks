@@ -37,53 +37,19 @@ query GET_FRONT_PAGE {
           }
           pageLinkText
         }
-        searchSection {
-          fieldGroupName
-          searchLabel
-          backgroundImage {
-            id
-            altText
-            sourceUrl
-            srcSet
-            sizes
-            mediaDetails {
-              width
-              height
-            }
-          }
-          taxonomies {
-            name
-            uri
-          }
-          taxonomyIconOne {
-            id
-            altText
-            sourceUrl
-          }
-          taxonomyIconTwo {
-            id
-            altText
-            sourceUrl
-          }
-          taxonomyIconThree {
-            id
-            altText
-            sourceUrl
-          }
-        }
-        featuredPostsSection {
+        featuredReviewsSection {
           heading
-          featuredPosts {
+          featuredReviews {
             ... on hwgraphql_Post {
               id
               title
-              excerpt
               date
+              content
               uri
               featuredImage {
                 node {
-                  altText
                   sourceUrl
+                  altText
                   sourceUrlSharp {
                     childImageSharp {
                       fluid {
@@ -132,7 +98,6 @@ query GET_FRONT_PAGE {
       nodes {
         id
         title
-        excerpt
         content
         date
         uri

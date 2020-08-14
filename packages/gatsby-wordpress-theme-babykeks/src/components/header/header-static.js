@@ -18,12 +18,12 @@ const Header = ({ data }) => {
             <div className="site-header">
                 <div className="site-brand">
                     <Link to="/">
-                        <img className="site-brand__logo" src={siteLogoURL} width="68" height="55"
+                        <img className="site-brand__logo" src={siteLogoURL} width="200"
                             alt="header logo" />
                     </Link>
                     <div>
                         <h2 className="screen-reader-text site-brand__title">{siteTitle}</h2>
-                        <p className="site-brand__description">{siteTagLine}</p>
+                        <p className="site-brand__description" style={{ marginLeft: "20px" }}>{siteTagLine}</p>
                     </div>
                 </div>
 
