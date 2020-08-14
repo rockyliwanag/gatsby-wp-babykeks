@@ -35,7 +35,7 @@ const Hero = (props) => {
                     </div>
                 </div>
             </BackgroundImage>
-            {console.log("Props, ", props)}
+            {console.log("Props!, ", image)}
             {/* </div> */}
         </div>
     ) : null;

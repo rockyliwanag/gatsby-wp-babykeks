@@ -1,5 +1,7 @@
 @import "../../../sass/essentials";
 
+// Block Component
+
 .hero-section {
     align-items: center;
     height: 100vh;
@@ -22,6 +24,12 @@
 	}
 
 }
+
+// Element that depends on the block
+
+
+//Modifier that changes the style of the block
+
 
 .background-image {
 	width: 100%;

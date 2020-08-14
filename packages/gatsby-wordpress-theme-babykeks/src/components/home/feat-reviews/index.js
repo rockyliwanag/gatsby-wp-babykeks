@@ -1,22 +1,40 @@
 import React from 'react';
-// import Link from 'gatsby-link';
-// import BackgroundImage from 'gatsby-background-image';
+// import config from '../../../../client-config';
+import Link from 'gatsby-link';
 import { isEmpty } from 'lodash';
-import './styles.scss';
+import Review from '../../reviews-list/post';
+// import './style.scss';
 
 const FeatReviews = (props) => {
-    const { title, content, image, date } = props.data;
-    console.log(props.data);
-    return !isEmpty(props.data) ? (
-        <div className="hero-section">
-            {/* <div className="hero-image"> */}
-                Reviews
-            {/* </div> */}
+    console.log("Review, ", props);
 
+    const { featuredReviews, heading } = props.data;
+
+    return !isEmpty(featuredReviews) ? (
+        <div className="featured-Reviews-section">
+            <div className="wrapper">
+                <h2>
+                    {!isEmpty(heading)
+                        ? heading
+                        : null}
+                </h2>
+                {!isEmpty(featuredReviews) ? (
+                    <div className="featured-Reviews-section__wrap">
+                        {featuredReviews.map(
+                            (review, index) => (
+                                <Review key={`${review.id}`} review={review} />
+                            )
+                        )}
+                    </div>
+                ) : null}
+            </div>
+            <div className="view-all-wrap">
+                <Link to="/blog"><button>View All</button></Link>
+            </div>
         </div>
-    ) : null;
-
-
+    ) : (
+            ''
+        );
 };
 
 export default FeatReviews;

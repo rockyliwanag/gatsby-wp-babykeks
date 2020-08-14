@@ -44,6 +44,7 @@ query GET_FRONT_PAGE {
               id
               title
               date
+              excerpt(format: RENDERED)
               content
               uri
               featuredImage {
