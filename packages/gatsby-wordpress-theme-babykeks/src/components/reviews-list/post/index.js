@@ -7,13 +7,13 @@ import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 
 const Review = ({ review }) => {
-    console.log("Posts!!, ", review.excerpt);
 
     if (isEmpty(review)) {
         return null;
     }
 
     return (
+
         <div className="featured-post-section" >
             {!isEmpty(review.featuredImage) ? (
                 <div className="featured-post-section__img">
@@ -33,11 +33,11 @@ const Review = ({ review }) => {
                 ) : null}
                 <div className="featured-post-section__meta">
                     {review.excerpt ? (
-                        // <span className="featured-post-section__date">
-                        <div>
+                        <span className="featured-post-section__date">
+
                             {review.excerpt}
-                        </div>
-                        {/* </span> */}
+
+                        </span>
                     ) : null}
                     <Link
                         className="featured-post-section__read-more"
@@ -47,6 +47,7 @@ const Review = ({ review }) => {
 					</Link>
                 </div>
             </div>
+            {console.log('This review, ', review)}
         </div>
     )
 }

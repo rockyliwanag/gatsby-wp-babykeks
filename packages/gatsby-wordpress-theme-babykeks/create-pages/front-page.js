@@ -47,6 +47,17 @@ query GET_FRONT_PAGE {
               excerpt(format: RENDERED)
               content
               uri
+              ReviewMeta {
+                reviews {
+                  city
+                  fieldGroupName
+                  name
+                  review
+                  photo {
+                    sourceUrl(size: MEDIUM)
+                  }
+                }
+              }
               featuredImage {
                 node {
                   sourceUrl
@@ -69,6 +80,7 @@ query GET_FRONT_PAGE {
         }
       }
     }
+
     posts(first: 3) {
       nodes {
         id
@@ -76,6 +88,16 @@ query GET_FRONT_PAGE {
         excerpt
         date
         uri
+        ReviewMeta {
+          reviews {
+            city
+            name
+            review
+            photo {
+              sourceUrl(size: MEDIUM)
+            }
+          }
+        }
         featuredImage {
           node {
             altText

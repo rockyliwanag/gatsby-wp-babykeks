@@ -7,12 +7,11 @@ import FeatProducts from '../../components/home/feat-products';
 import { isEmpty } from 'lodash';
 
 const FrontPageTemplate = (props) => {
-    console.warn(props);
 
     const {
         pageContext: {
             page: { frontPageMeta: { banner, featuredReviewsSection, featuredProductsSection } },
-
+            posts,
         }
     } = props;
 
@@ -22,6 +21,7 @@ const FrontPageTemplate = (props) => {
                 <>
                     <Hero data={banner} />
                     <FeatReviews data={featuredReviewsSection} />
+                    <FeatReviews data={posts} />
                     <FeatProducts data={featuredProductsSection} />
 
                 </>
