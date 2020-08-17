@@ -2,7 +2,7 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 // import { getFormattedDate } from '../../../utils/functions';
 import Link from 'gatsby-link';
-// import './style.scss';
+import './style.scss';
 // import defaultImage from '../../../images/default/default.jpg';
 import Img from 'gatsby-image';
 
@@ -25,19 +25,24 @@ const Review = ({ review }) => {
                     </div>
                 )}
             <div className="featured-post-section__content">
-                {review.title ? (
-                    <h3 dangerouslySetInnerHTML={{ __html: review.title }} />
+
+                {review.ReviewMeta.reviews.name ? (
+                    <h3 dangerouslySetInnerHTML={{ __html: review.ReviewMeta.reviews.name }} />
                 ) : null}
                 {review.content ? (
                     <div className="featured-post-section__excerpt" dangerouslySetInnerHTML={{ __html: review.content }} />
                 ) : null}
+                {review.title ? (
+                    <p dangerouslySetInnerHTML={{ __html: review.title }} />
+                ) : null}
                 <div className="featured-post-section__meta">
                     {review.excerpt ? (
-                        <span className="featured-post-section__date">
+                        <span className="featured-post-section__date"
+                            dangerouslySetInnerHTML={{ __html: review.excerpt }} />
 
-                            {review.excerpt}
 
-                        </span>
+
+
                     ) : null}
                     <Link
                         className="featured-post-section__read-more"
