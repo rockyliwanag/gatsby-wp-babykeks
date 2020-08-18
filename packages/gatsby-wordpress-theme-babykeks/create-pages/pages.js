@@ -29,7 +29,7 @@ module.exports = async ({ actions, graphql }) => {
         return await graphql(GET_PAGES)
             .then(({ data }) => {
 
-                const { HWGraphQL: { pages, categories } } = data;
+                const { HWGraphQL: { pages, /*categories*/ } } = data;
 
                 return { pages: pages.nodes, /*categories: categories.edges*/ };
             });
