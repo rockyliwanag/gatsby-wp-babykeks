@@ -7,7 +7,7 @@ const path = require('path');
 
 // Create all pages.
 exports.createPages = async ({ actions, graphql }) => {
-    console.log("ACTIONS!!!!, ", actions, graphql);
+    console.log("ACTIONS!!!!, ", graphql);
     await createAllPages({ actions, graphql });
     // await createAllPosts({ actions, graphql });
     await createFrontPage({ actions, graphql });
