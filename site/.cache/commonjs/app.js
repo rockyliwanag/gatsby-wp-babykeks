@@ -54,6 +54,12 @@ window.___loader = _loader.publicLoader; // Let the site/plugins run code very e
           });
           parentSocket.emit(`develop:restart`);
         }
+      }); // Prevents certain browsers spamming XHR 'ERR_CONNECTION_REFUSED'
+      // errors within the console, such as when exiting the develop process.
+
+      parentSocket.on(`disconnect`, () => {
+        console.warn(`[socket.io] Disconnected. Unable to perform health-check.`);
+        parentSocket.close();
       });
     }
   });
