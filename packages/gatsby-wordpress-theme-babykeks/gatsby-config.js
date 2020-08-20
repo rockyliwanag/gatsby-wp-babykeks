@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = ({
     wordPressUrl
 }) => ({
@@ -46,15 +48,17 @@ module.exports = ({
             resolve: `@pasdo501/gatsby-source-woocommerce`,
             options: {
                 // Base URL of WordPress site
-                api: 'http://babykeksbakes.com',
+                api: 'babykeksbakes.com',
                 // true if using https. false otherwise.
                 https: false,
                 api_keys: {
-                    consumer_key: `ck_bc3995ef65a5ad2e61b5fe84d24a50b1a44ac77e`,
-                    consumer_secret: `cs_8c86e99f8e84d17dc38686893f0508740ca616a1`,
+                    consumer_key: `${process.env.CONSUMER_KEY}`,
+                    consumer_secret: `${process.env.CONSUMER_SECRET}`,
                 },
                 // Array of strings with fields you'd like to create nodes for...
                 fields: ['products', 'products/categories', 'products/attributes'],
+                api_version: 'wc/v3',
+                per_page: 20,
             }
         },
         {

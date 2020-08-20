@@ -80,78 +80,21 @@ query GET_FRONT_PAGE {
         }
       }
     }
-
-    posts(first: 3) {
-      nodes {
+  }
+  allWcProducts {
+    edges {
+      node {
         id
-        title
-        excerpt
-        date
-        uri
-        ReviewMeta {
-          reviews {
-            city
-            name
-            review
-            photo {
-              sourceUrl(size: MEDIUM)
-            }
-          }
-        }
-        featuredImage {
-          node {
-            altText
-            sourceUrl
-            sourceUrlSharp {
-              childImageSharp {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    allPosts: posts(first: 5000) {
-      nodes {
-        id
-        title
-        content
-        date
-        uri
-        author {
-          node {
-            name
-          }
-        }
-        categories {
-          edges {
-            node {
-              name
-            }
-          }
-        }
-        featuredImage {
-          node {
-            altText
-            sourceUrl
-            sourceUrlSharp {
-              childImageSharp {
-                fluid {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  sizes
-                }
-              }
-            }
-          }
+        price
+        name
+        description
+        average_rating
+        rating_count
+        short_description
+        images {
+          src
+          alt
+          name
         }
       }
     }
@@ -165,17 +108,18 @@ module.exports = async ({ actions, graphql }) => {
   const fetchPosts = async () => {
     return await graphql(GET_FRONT_PAGE)
       .then(({ data }) => {
-        const { HWGraphQL: { pageBy, posts } } = data;
-        return { page: pageBy, posts: posts.nodes };
+        const { HWGraphQL: { pageBy }, allWcProducts: { edges } } = data;
+        // console.log("This DATA, ", data);
+        return { page: pageBy, products: edges };
       });
   };
-  await fetchPosts().then(({ page, posts }) => {
+  await fetchPosts().then(({ page, products }) => {
     createPage({
       path: '/',
       component: slash(frontPageTemplate),
       context: {
         page,
-        posts
+        products
       }
     });
   });

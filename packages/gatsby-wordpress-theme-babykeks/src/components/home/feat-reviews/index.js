@@ -2,12 +2,11 @@ import React from 'react';
 // import config from '../../../../client-config';
 import Link from 'gatsby-link';
 import { isEmpty } from 'lodash';
-import Review from '../../reviews-list/post';
+import Review from '../../lists/post';
 // import './style.scss';
 
 const FeatReviews = (props) => {
-    console.log("Review, ", props);
-
+    console.log("RevProp, ", props);
     const { featuredReviews, heading } = props.data;
 
     return !isEmpty(featuredReviews) ? (
@@ -21,7 +20,7 @@ const FeatReviews = (props) => {
                 {!isEmpty(featuredReviews) ? (
                     <div className="featured-Reviews-section__wrap">
                         {featuredReviews.map(
-                            (review, index) => (
+                            (review) => (
                                 <Review key={`${review.id}`} review={review} />
                             )
                         )}

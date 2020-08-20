@@ -8,10 +8,11 @@ import { isEmpty } from 'lodash';
 
 const FrontPageTemplate = (props) => {
 
+    console.log('home props, ', props);
     const {
         pageContext: {
-            page: { frontPageMeta: { banner, featuredReviewsSection, featuredProductsSection } },
-            posts,
+            page: { frontPageMeta: { banner, featuredReviewsSection } },
+            products
         }
     } = props;
 
@@ -21,9 +22,7 @@ const FrontPageTemplate = (props) => {
                 <>
                     <Hero data={banner} />
                     <FeatReviews data={featuredReviewsSection} />
-                    <FeatReviews data={posts} />
-                    <FeatProducts data={featuredProductsSection} />
-
+                    <FeatProducts data={products} />
                 </>
             ) : <Error message="Something went wrong!" />}
         </Layout>
