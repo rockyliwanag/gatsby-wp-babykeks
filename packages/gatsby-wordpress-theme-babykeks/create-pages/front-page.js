@@ -81,7 +81,7 @@ query GET_FRONT_PAGE {
       }
     }
   }
-  allWcProducts {
+  allWcProducts(filter: {categories: {elemMatch: {name: {eq: "Chocolate Chip Cookies"}}}}) {
     edges {
       node {
         id
@@ -95,6 +95,15 @@ query GET_FRONT_PAGE {
           src
           alt
           name
+          localFile {
+            childImageSharp {
+              fluid {
+                base64
+                srcSet
+                aspectRatio
+              }
+            }
+          }
         }
       }
     }
@@ -109,7 +118,6 @@ module.exports = async ({ actions, graphql }) => {
     return await graphql(GET_FRONT_PAGE)
       .then(({ data }) => {
         const { HWGraphQL: { pageBy }, allWcProducts: { edges } } = data;
-        // console.log("This DATA, ", data);
         return { page: pageBy, products: edges };
       });
   };

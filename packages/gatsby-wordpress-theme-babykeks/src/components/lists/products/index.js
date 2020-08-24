@@ -4,10 +4,10 @@ import { isEmpty } from 'lodash';
 import Link from 'gatsby-link';
 // import './style.scss';
 // import defaultImage from '../../../images/default/default.jpg';
-// import Img from 'gatsby-image';
+import Img from 'gatsby-image';
 
 const Product = ({ product }) => {
-    console.log("Product: ", product);
+    // console.log("Product: ", product);
     if (isEmpty(product)) {
         return null;
     }
@@ -17,7 +17,8 @@ const Product = ({ product }) => {
         <div className="featured-post-section" >
             {!isEmpty(product.images) ? (
                 <div className="featured-post-section__img">
-                    {/* <Img fluid={product.featuredImage.node.sourceUrlSharp.childImageSharp.fluid} alt={product.altText ? product.altText : product.title} /> */}
+                    {console.log("images, ", product.images[0])}
+                    <Img fluid={product.images[0].localFile.childImageSharp.fluid} alt={product.images[0].alt ? product.images[0].alt : product.title} />
                 </div>
             ) : (
                     <div className="featured-post-section__img">
@@ -43,7 +44,7 @@ const Product = ({ product }) => {
                     className="featured-post-section__read-more"
                     to={product.uri}
                 >
-                    Read More
+                    Read More ₱
 					</Link>
                 {/* </div> */}
             </div>
