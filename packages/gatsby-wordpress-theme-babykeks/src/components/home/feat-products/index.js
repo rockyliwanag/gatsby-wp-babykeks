@@ -16,8 +16,8 @@ const FeatProducts = (props) => {
                 {!isEmpty(edges) ? (
                     <div className="featured-Reviews-section__wrap">
                         {edges.map(
-                            (edges) => (
-                                <Product key={`${edges.node.id}`} product={edges.node} />
+                            (product) => (
+                                <Product key={`${product.node.id}`} product={product.node} />
                             )
                         )}
                     </div>

@@ -6,7 +6,7 @@ import Review from '../../lists/post';
 // import './style.scss';
 
 const FeatReviews = (props) => {
-    console.log("RevProp, ", props);
+    // console.log("RevProp, ", props);
     const { featuredReviews, heading } = props.data;
 
     return !isEmpty(featuredReviews) ? (
