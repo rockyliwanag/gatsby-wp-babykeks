@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{9973:function(e,t,a){"use strict";a.r(t);var n=a("mXGw"),s=a.n(n),u=a("C5uL"),l=a("s6R9");t.default=function(){return s.a.createElement(u.a,null,s.a.createElement(l.a,{title:"404: Not found",header:{siteTitle:"Gatsby WordPres Theme - Babykeks"}}),s.a.createElement("h1",null,"NOT FOUND"),s.a.createElement("p",null,"You just hit a route that doesn't exist... the sadness!"))}}}]);
+//# sourceMappingURL=component---packages-gatsby-wordpress-theme-babykeks-src-pages-404-js-f2a1c2078521c24cc38b.js.map
