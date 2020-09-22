@@ -1,0 +1,9 @@
+.page-content-wrap {
+    display: grid;
+    padding-bottom: 48px;
+    grid-template-columns: 100%;
+
+    .page-content {
+        padding-bottom: 48px;
+    }
+}
