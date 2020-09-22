@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{AepJ:function(e,n,a){"use strict";a.r(n);var o=a("mXGw"),t=a.n(o),l=a("C5uL");n.default=function(e){return console.log("props",e),t.a.createElement(l.a,null,t.a.createElement("div",null,"My Page"))}}}]);
-//# sourceMappingURL=component---packages-gatsby-wordpress-theme-babykeks-src-templates-page-index-js-c5b017cfd46406bebff9.js.map
