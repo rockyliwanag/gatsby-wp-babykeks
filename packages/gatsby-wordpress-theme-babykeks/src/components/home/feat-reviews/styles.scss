@@ -1,0 +1,13 @@
+.featured-Reviews-section {
+    // display: flex;
+    // flex-direction: row;
+    // align-content: space-between;
+    &__wrap {
+        display:flex;
+        // flex-direction: column;
+        align-content: space-between;
+        text-align: center;
+        align-items: flex-start;
+    }
+
+}

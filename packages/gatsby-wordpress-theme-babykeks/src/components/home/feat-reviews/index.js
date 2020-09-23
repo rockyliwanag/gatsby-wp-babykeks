@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { isEmpty } from 'lodash';
 import Review from '../../lists/post';
-// import './style.scss';
+import './styles.scss';
 
 const FeatReviews = (props) => {
     // console.log("RevProp, ", props);

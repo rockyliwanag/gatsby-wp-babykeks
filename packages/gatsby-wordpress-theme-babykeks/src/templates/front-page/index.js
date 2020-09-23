@@ -13,7 +13,6 @@ const FrontPageTemplate = (props) => {
         pageContext: {
             page: { frontPageMeta: { banner, featuredReviewsSection } },
             products,
-            // images
         }
     } = props;
 
@@ -22,9 +21,8 @@ const FrontPageTemplate = (props) => {
             {!isEmpty(props.pageContext) ? (
                 <>
                     <Hero data={banner} />
-                    <FeatReviews data={featuredReviewsSection} />
-                    {/* <FeatProducts data={images} /> */}
                     <FeatProducts data={products} />
+                    <FeatReviews data={featuredReviewsSection} />
                 </>
             ) : <Error message="Something went wrong!" />}
         </Layout>

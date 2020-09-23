@@ -11,8 +11,9 @@ const Page = (props) => {
 query {
   file(relativePath: {eq: "default/default.jpg"}) {
     childImageSharp {
-      original {
-        src
+      fixed {
+        srcSet
+        originalName
       }
     }
   }
@@ -28,9 +29,9 @@ query {
                     <div className="page-content wrap">
                         <section className="page-content">
                             {!isEmpty(data.featuredImage) ? (
-                                <Img original={data.featuredImage.sourceUrlSharp.childImageSharp.original} alt={data.altText ? data.altText : data.title} />
+                                <Img fixed={data.featuredImage.sourceUrlSharp.childImageSharp.fixed} alt={data.altText ? data.altText : data.title} />
                             ) : (
-                                    <Img original={imgData.file.childImageSharp.original} alt="Default" />
+                                    <Img fixed={imgData.file.childImageSharp.fixed} alt="Default" />
                                 )}
 
                             {!isEmpty(data.content) ? (

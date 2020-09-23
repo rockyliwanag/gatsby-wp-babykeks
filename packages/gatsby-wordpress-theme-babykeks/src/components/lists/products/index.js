@@ -2,7 +2,7 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 // import { getFormattedDate } from '../../../utils/functions';
 import Link from 'gatsby-link';
-// import './style.scss';
+import './styles.scss';
 // import defaultImage from '../../../images/default/default.jpg';
 import Img from 'gatsby-image';
 
@@ -14,34 +14,34 @@ const Product = ({ product }) => {
 
     return (
 
-        <div className="featured-post-section" >
+        <div className="featured-product-section" >
             {!isEmpty(product.images) ? (
-                <div className="featured-post-section__img">
+                <div className="featured-product-section__img">
                     {console.log("images, ", product.images[0])}
                     <Img fluid={product.images[0].localFile.childImageSharp.fluid} alt={product.images[0].alt ? product.images[0].alt : product.title} />
                 </div>
             ) : (
-                    <div className="featured-post-section__img">
-                        {/* <img src={defaultImage} alt="Post default" /> */}
+                    <div className="featured-product-section__img">
+                        {/* <img src={defaultImage} alt=-product default" /> */}
                     </div>
                 )}
-            <div className="featured-post-section__content">
+            <div className="featured-product-section__content">
                 {product.name ? (
                     <h3 dangerouslySetInnerHTML={{ __html: product.name }} />
                 ) : null}
                 {/* {product.short_description ? (
-                    <div className="featured-post-section__excerpt" dangerouslySetInnerHTML={{ __html: product.short_description }} />
+                    <div className="featured-product-section__excerpt" dangerouslySetInnerHTML={{ __html: product.short_description }} />
                 ) : null} */}
                 {product.short_description ? (
                     <p dangerouslySetInnerHTML={{ __html: product.short_description }} />
                 ) : null}
-                {/* <div className="featured-post-section__meta">
+                {/* <div className="featured-product-section__meta">
                     {product.excerpt ? (
-                        <span className="featured-post-section__date"
+                        <span className="featured-product-section__date"
                             dangerouslySetInnerHTML={{ __html: product.excerpt }} />
                     ) : null} */}
                 <Link
-                    className="featured-post-section__read-more"
+                    className="featured-product-section__read-more"
                     to={product.uri}
                 >
                     Read More ₱

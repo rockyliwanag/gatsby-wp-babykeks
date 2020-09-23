@@ -3,7 +3,7 @@ import { isEmpty } from 'lodash';
 // import { getFormattedDate } from '../../../utils/functions';
 import Link from 'gatsby-link';
 import './style.scss';
-// import defaultImage from '../../../images/default/default.jpg';
+import defaultImage from '../../../images/default/default.jpg';
 import Img from 'gatsby-image';
 
 const Review = ({ review }) => {
@@ -21,7 +21,7 @@ const Review = ({ review }) => {
                 </div>
             ) : (
                     <div className="featured-post-section__img">
-                        {/* <img src={defaultImage} alt="Post default" /> */}
+                        <img src={defaultImage} alt="Post default" />
                     </div>
                 )}
             <div className="featured-post-section__content">
